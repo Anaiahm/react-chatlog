@@ -9,7 +9,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatEntry senderName="Anaiah" messageBody="Can you see this?" timeStamp="2023-05-15T10:30:00Z"></ChatEntry>
+        <ChatEntry sender={MessageData[0].sender} body={MessageData[0].body} timeStamp={MessageData[0].timeStamp}></ChatEntry>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
       </main>
