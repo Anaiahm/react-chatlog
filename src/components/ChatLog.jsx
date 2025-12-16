@@ -1,17 +1,22 @@
 import ChatEntry from "./ChatEntry"
 
-
 const ChatLog = (props) => {
-    const chatEntries = props.entries.map((entry) => {
-        return <ChatEntry sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp}></ChatEntry>;
-    });
   return (
     <section className="chat-log">
-      {chatEntries}
+      {props.entries.map(entry => (
+        <ChatEntry
+          key={entry.id}
+          sender={entry.sender}
+          body={entry.body}
+          timeStamp={entry.timeStamp}
+          liked={entry.liked}
+          onToggleLike={() => props.onToggleLike(entry.id)}
+        />
+      ))}
     </section>
-
-    );
+  );
 };
+
 
 export default ChatLog;
 
